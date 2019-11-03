@@ -204,7 +204,15 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    #height 25
+    workspace_buttons yes
+    font pango:Noto Sans 14
+
+    #position top
+    position bottom
+
+    #system icons
+    status_command i3status
 }
 
 #######################################################################
@@ -238,3 +246,5 @@ exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 exec --no-startup-id gnome-flashback
+
+exec_always --no-startup-id mplayer -loop 0 -rootwin -ao null -noconsolecontrols -fs ~/Vídeos/5.gif
